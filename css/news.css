@@ -1,0 +1,271 @@
+/* ------------------------------------ */
+/* --- 1. Base and Utility Styles --- */
+/* ------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Theming */
+:root {
+    --primary-purple: #7f2677;
+    --secondary-purple: #a855f7;
+    --light-purple: #e9d5ff;
+    --primary-orange: #f06724;
+    --secondary-orange: #fb923c;
+    --light-orange: #fed7aa;
+    --dark-gray: #374151;
+    --light-gray: #f9fafb;
+    --white: #ffffff;
+
+    /* Fonts */
+    --primary-font: "Anton", sans-serif;
+    --secondary-font: "Lora", serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ------------------------------------ */
+/* --- 2. News Header Section --- */
+/* ------------------------------------ */
+
+#news-section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-position: center bottom;
+    overflow: hidden;
+}
+
+/* Dark overlay for the background image */
+#news-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Text on top of the overlay */
+.news-overlay {
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+}
+
+.news-overlay h2 {
+    font-size: 80px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: var(--primary-font);
+    white-space: nowrap;
+}
+
+/* ------------------------------------ */
+/* --- 3. News Grid & Cards --- */
+/* ------------------------------------ */
+
+.news-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: auto;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.header h2 {
+    font-size: 2.2em;
+    color: var(--primary-purple);
+    margin: 0;
+    position: relative;
+    padding-bottom: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+.header h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-orange);
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.news-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    min-width: 250px;
+    max-width: calc(33.333% - 20px);
+    opacity: 0;
+    transform: translateX(100px);
+    animation-name: slideInFromRight;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    flex-direction: column;
+}
+
+/* Animation delays for staggered effect */
+.news-card:nth-child(1) { animation-delay: 0.2s; }
+.news-card:nth-child(2) { animation-delay: 0.4s; }
+.news-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Animation keyframes */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Card content styles */
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.news-card .content {
+    padding: 15px;
+}
+
+.news-card .category {
+    font-size: 0.8em;
+    color: var(--primary-purple);
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--secondary-font);
+}
+
+.news-card h3 {
+    font-size: 1.2em;
+    color: var(--primary-orange);
+    margin: 0 0 10px;
+    text-align: left;
+    font-family: var(--secondary-font);
+}
+
+.news-card .date {
+    font-size: 0.8em;
+    color: #666;
+    display: block;
+}
+
+/* ------------------------------------ */
+/* --- 4. Responsive Design --- */
+/* ------------------------------------ */
+
+@media (max-width: 1200px) {
+    .news-overlay h2 {
+        font-size: 60px;
+    }
+
+    .news-card {
+        max-width: calc(50% - 20px); /* 2 per row on medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .news-overlay h2 {
+        font-size: 48px;
+        white-space: normal; /* allow wrapping */
+    }
+
+    .news-card {
+        flex: 1 1 45%;
+        max-width: 100%;
+    }
+
+    .news-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-overlay h2 {
+        font-size: 36px;
+    }
+
+    .header h2 {
+        font-size: 1.8em;
+    }
+
+    .news-container {
+        gap: 15px;
+    }
+
+    .news-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .news-card img {
+        height: auto;
+        max-height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-overlay h2 {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .header h2 {
+        font-size: 1.5em;
+    }
+
+    .news-card h3 {
+        font-size: 0.95em;
+    }
+
+    .news-card .date {
+        font-size: 0.7em;
+    }
+}

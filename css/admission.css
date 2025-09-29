@@ -1,0 +1,211 @@
+/* ------------------------------------ */
+/* --- 1. Base and Utility Styles --- */
+/* ------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-purple: #7f2677;
+    --secondary-purple: #a855f7;
+    --light-purple: #e9d5ff;
+    --primary-orange: #f06724;
+    --secondary-orange: #fb923c;
+    --light-orange: #fed7aa;
+    --dark-gray: #374151;
+    --light-gray: #f9fafb;
+    --white: #ffffff;
+    --primary-font: "Anton", sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* ------------------------------------ */
+/* --- 2. Admission Header Section --- */
+/* ------------------------------------ */
+
+#admission-section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background-position: center bottom;
+    overflow: hidden;
+}
+
+#admission-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.admission-overlay {
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+    padding: 0 10px;
+}
+
+.admission-overlay h2 {
+    font-size: clamp(28px, 6vw, 80px); /* scales smoothly */
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: var(--primary-font);
+    white-space: normal; /* allow wrapping */
+}
+
+/* ------------------------------------ */
+/* --- 3. Admission Content & Form --- */
+/* ------------------------------------ */
+
+#creteria-section {
+    padding: clamp(30px, 5vw, 60px) 20px;
+    background: var(--white);
+}
+
+.admission-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.column h2 {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.column p,
+.column ul {
+    margin-bottom: 20px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: black;
+    text-align: justify;
+}
+
+.column ul {
+    list-style: disc inside;
+}
+
+/* Admission Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-purple);
+    padding: 0 8px;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: 500;
+    display: block;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: #f9f9f9;
+}
+
+input[type="file"] {
+    padding: 5px;
+    background: var(--white);
+}
+
+button[type="submit"] {
+    background: var(--primary-purple);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: var(--primary-purple);
+}
+
+/* ------------------------------------ */
+/* --- 4. Responsive Design --- */
+/* ------------------------------------ */
+
+@media (max-width: 1024px) {
+    .admission-container {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admission-container {
+        flex-direction: column;
+    }
+
+    .admission-overlay h2 {
+        font-size: clamp(28px, 8vw, 50px);
+    }
+
+    .column h2 {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+    }
+
+    .column p,
+    .column ul {
+        font-size: clamp(0.85rem, 2.5vw, 1rem);
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}

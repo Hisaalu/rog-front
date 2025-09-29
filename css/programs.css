@@ -1,0 +1,145 @@
+/* ------------------------------------ */
+/* --- 1. Base and Utility Styles --- */
+/* ------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-purple: #7f2677;
+    --secondary-purple: #a855f7;
+    --light-purple: #e9d5ff;
+    --primary-orange: #f06724;
+    --secondary-orange: #fb923c;
+    --light-orange: #fed7aa;
+    --dark-gray: #374151;
+    --light-gray: #f9fafb;
+    --white: #ffffff;
+
+    --primary-font: "Anton", sans-serif;
+    --secondary-font: "Lora", serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* ------------------------------------ */
+/* --- 2. Programs Header Section --- */
+/* ------------------------------------ */
+
+#programs-section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background-position: center bottom;
+    overflow: hidden;
+}
+
+#programs-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.programs-overlay {
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+    padding: 0 10px;
+}
+
+.programs-overlay h2 {
+    font-size: clamp(28px, 6vw, 80px); /* scales smoothly */
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: var(--primary-font);
+    white-space: normal; /* allow wrapping */
+}
+
+/* ------------------------------------ */
+/* --- 3. Call-to-Action Section --- */
+/* ------------------------------------ */
+
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: clamp(30px, 6vw, 80px) 20px;
+    background-color: #f7f7f7;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="transparent" stroke="#e0e0e0" stroke-width="1"/><path d="M50 0 L50 20 M50 80 L50 100 M0 50 L20 50 M80 50 L100 50" stroke="#e0e0e0" stroke-width="1"/><line x1="25" y1="25" x2="35" y2="35" stroke="#e0e0e0" stroke-width="1"/><line x1="65" y1="65" x2="75" y2="75" stroke="#e0e0e0" stroke-width="1"/></svg>');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+}
+
+.cta-section h2 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: black;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: var(--secondary-font);
+}
+
+.cta-section p {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    color: #666;
+    margin-bottom: 25px;
+    max-width: 600px;
+    line-height: 1.5;
+    font-family: var(--secondary-font);
+}
+
+.cta-section .apply-btn {
+    display: inline-block;
+    padding: clamp(10px, 2vw, 14px) clamp(18px, 4vw, 30px);
+    background-color: var(--primary-orange);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.cta-section .apply-btn:hover {
+    background-color: var(--secondary-orange);
+}
+
+/* ------------------------------------ */
+/* --- 4. Extra Responsive Tweaks --- */
+/* ------------------------------------ */
+
+@media (max-width: 480px) {
+    .programs-overlay h2 {
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .cta-section {
+        padding: 40px 15px;
+    }
+
+    .cta-section p {
+        max-width: 90%;
+    }
+}

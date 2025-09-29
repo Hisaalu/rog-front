@@ -1,0 +1,254 @@
+/* ------------------------------------ */
+/* --- 1. Base and Utility Styles --- */
+/* ------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400;700&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Theming */
+:root {
+    --primary-purple: #7f2677;
+    --secondary-purple: #a855f7;
+    --light-purple: #e9d5ff;
+    --primary-orange: #f06724;
+    --secondary-orange: #fb923c;
+    --light-orange: #fed7aa;
+    --dark-gray: #374151;
+    --light-gray: #f9fafb;
+    --white: #ffffff;
+    --primary-font: "Anton", sans-serif;
+    --secondary-font: "Lora", serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* ------------------------------------ */
+/* --- 2. Contact Form Section --- */
+/* ------------------------------------ */
+
+.contact-section {
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+    background-color: var(--white);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-heading {
+    font-family: var(--primary-font);
+    font-size: 80px;
+    color: var(--primary-purple);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.contactform-info {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.contactform-info p {
+    color: var(--primary-purple);
+    margin: 5px 0;
+    text-align: justify;
+    margin-left: 200px;
+    font-size: 15px;
+}
+
+.contactform-info i {
+    margin-right: 10px;
+}
+
+.contactform-info .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 1px;
+    vertical-align: middle;
+}
+
+.message-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    color: var(--primary-purple);
+}
+
+/* Contact Form Specific Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: var(--primary-purple);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #5a1d57;
+}
+
+/* ------------------------------------ */
+/* --- 3. Map Section --- */
+/* ------------------------------------ */
+
+.map-section {
+    background-color: #0d1a29;
+    color: var(--white);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.map-header {
+    margin-bottom: 20px;
+}
+
+.map-pin-icon {
+    font-size: 4em;
+    color: var(--primary-orange);
+    margin-bottom: 10px;
+}
+
+.map-title {
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------------ */
+/* --- 4. Responsive Design --- */
+/* ------------------------------------ */
+
+@media (max-width: 1024px) {
+    .contact-heading {
+        font-size: 60px;
+    }
+
+    .contactform-info p {
+        margin-left: 50px;
+    }
+
+    .map-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-heading {
+        font-size: 40px;
+    }
+
+    .contactform-info {
+        font-size: 1em;
+    }
+
+    .contactform-info p {
+        margin-left: 0;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .form-group {
+        max-width: 100%;
+    }
+
+    .map-header {
+        margin-bottom: 15px;
+    }
+
+    .map-pin-icon {
+        font-size: 3em;
+    }
+
+    .map-title {
+        font-size: 1.5em;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-heading {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .message-heading {
+        font-size: 22px;
+    }
+
+    .contactform-info p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+}

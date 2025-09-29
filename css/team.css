@@ -1,0 +1,231 @@
+/* ------------------------------------ */
+/* --- 1. Base and Utility Styles --- */
+/* ------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Theming */
+:root {
+    --primary-purple: #7f2677;
+    --secondary-purple: #a855f7;
+    --light-purple: #e9d5ff;
+    --primary-orange: #f06724;
+    --secondary-orange: #fb923c;
+    --light-orange: #fed7aa;
+    --dark-gray: #374151;
+    --light-gray: #f9fafb;
+    --white: #ffffff;
+
+    /* Fonts */
+    --primary-font: "Anton", sans-serif;
+    --secondary-font: "Lora", serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* ------------------------------------ */
+/* --- 2. Team Header Section --- */
+/* ------------------------------------ */
+
+#team-section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background-position: center bottom;
+    overflow: hidden;
+}
+
+#team-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.team-overlay {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+    padding: 0 10px;
+}
+
+.team-overlay h2 {
+    font-size: clamp(28px, 6vw, 80px); /* scales smoothly */
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: var(--primary-font);
+    white-space: normal; /* allow wrapping */
+}
+
+/* ------------------------------------ */
+/* --- 3. Team Grid & Cards --- */
+/* ------------------------------------ */
+
+.team-title {
+    margin-top: 20px;
+    text-align: center;
+    font-family: var(--primary-font);
+    color: black;
+}
+
+.team-title h2 {
+    font-size: clamp(24px, 3vw, 48px);
+    margin-bottom: 20px;
+    color: var(--primary-purple);
+    margin-top: 15px;
+    font-family: var(--primary-font);
+    border-bottom: 3px solid var(--primary-orange);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Card container */
+.team-member {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    flex-direction: row; /* default desktop layout */
+}
+
+/* Profile picture */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text content */
+.member-info {
+    flex: 1;
+    text-align: left;
+}
+
+.member-info h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.member-info h4 {
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--primary-orange);
+    margin: 5px 0 15px;
+}
+
+.member-info p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+
+.member-info p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.member-info h4 span {
+    color: #999;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 0 5px;
+}
+
+/* ------------------------------------ */
+/* --- 4. Responsive Design --- */
+/* ------------------------------------ */
+
+@media (max-width: 1024px) {
+    .team-overlay h2 {
+        font-size: clamp(32px, 5vw, 60px);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column; /* stack image & text */
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .member-info {
+        text-align: center;
+    }
+
+    .member-info h3 {
+        font-size: 1.2em;
+    }
+
+    .member-info h4 {
+        font-size: 0.95em;
+    }
+
+    .member-info p {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-overlay h2 {
+        font-size: clamp(22px, 7vw, 32px);
+        letter-spacing: 1px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .member-info h3 {
+        font-size: 1.1em;
+    }
+}

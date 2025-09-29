@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | Rays of Grace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(135deg, #7f2677, #f06724);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .coming-soon-container {
+      max-width: 500px;
+      width: 90%;
+      padding: 30px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .logo-wrapper img {
+      width: 220px;
+      margin-bottom: 20px;
+      height: 100px;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    /* Countdown Timer */
+    .countdown {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      flex: 1 1 45%;
+      margin: 5px;
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .time-box p {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      background-color: #fff;
+      color: #f06724;
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.8rem;
+      margin-top: 20px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .time-box {
+        flex: 1 1 100%;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="coming-soon-container">
+    <div class="logo-wrapper">
+      <img src="../images/logo-img/logo.png" alt="Rays of Grace Logo" class="logo">
+    </div>
+    <h1>Coming Soon</h1>
+    <p>We are working hard to bring back this page. For updates, follow us on our social media handles:</p>
+
+    <div class="social-links">
+      <a href="https://www.tiktok.com/@raysofgraceuganda" target="_blank">Tiktok</a>
+      <a href="https://www.instagram.com/raysofgraceacademyuganda?igsh=aGc3b2lyNGo1bmlh" target="_blank">Instagram</a>
+      <a href="https://x.com/grace_rays?t=CQyt8ld5PUFktoGwGv5QbQ&s=08" target="_blank">X</a>
+      <a href="https://www.facebook.com/profile.php?id=100057146993995" target="_blank">Facebook</a>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div class="time-box">
+        <span id="days">00</span>
+        <p>Days</p>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <p>Hours</p>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <p>Minutes</p>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <p>Seconds</p>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Rays of Grace | All Rights Reserved
+    </footer>
+  </div>
+
+  <script>
+    // Countdown Timer
+    const launchDate = new Date("Oct 19, 2025 00:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000*60*60*24));
+      const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+      document.getElementById("days").innerText = String(days).padStart(2,"0");
+      document.getElementById("hours").innerText = String(hours).padStart(2,"0");
+      document.getElementById("minutes").innerText = String(minutes).padStart(2,"0");
+      document.getElementById("seconds").innerText = String(seconds).padStart(2,"0");
+
+      if(distance < 0){
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "<p>We are live!</p>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* ------------------------------------ */
+/* --- 1. Base and Utility Styles --- */
+/* ------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Theming */
+:root {
+    --primary-purple: #7f2677;
+    --secondary-purple: #a855f7;
+    --light-purple: #e9d5ff;
+    --primary-orange: #f06724;
+    --secondary-orange: #fb923c;
+    --light-orange: #fed7aa;
+    --dark-gray: #374151;
+    --light-gray: #f9fafb;
+    --white: #ffffff;
+    --primary-font: "Anton", sans-serif;
+    --secondary-font: "Lora", serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* ------------------------------------ */
+/* --- 2. Gallery Header Section --- */
+/* ------------------------------------ */
+
+#gallery-section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background-position: center bottom;
+    overflow: hidden;
+}
+
+/* Overlay for the background image */
+#gallery-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Text on top of the overlay */
+.gallery-overlay {
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+    padding: 0 10px;
+}
+
+.gallery-overlay h2 {
+    font-size: clamp(28px, 6vw, 80px); /* scales with screen size */
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: var(--primary-font);
+    white-space: normal; /* allow wrapping */
+}
+
+/* ------------------------------------ */
+/* --- 3. Gallery Grid --- */
+/* ------------------------------------ */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.gallery-item {
+  text-align: justify;
+  font-style: italic;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;              /* make image height flexible */
+  max-height: 250px;         /* prevent it from being too tall */
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-description {
+  padding: 15px;
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+  line-height: 1.5;
+  background: var(--light-gray);
+}
+
+/* ------------------------------------ */
+/* --- 4. Responsive Design --- */
+/* ------------------------------------ */
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .gallery-grid {
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    .gallery-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-overlay h2 {
+        font-size: clamp(22px, 8vw, 32px); /* very small screens */
+        letter-spacing: 1px;
+    }
+
+    .gallery-description {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+}

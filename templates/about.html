@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Rays of Grace</title>
+    <link rel="icon" type="image/x-icon" href="../images/fav-img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <img src="../images/logo-img/logo.png" alt="Rays School Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" onclick="showPage('home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                    <div class="dropdown">
+                        <a href="about.html" class="dropdown-link" onclick="showPage('about-school')">About Our School</a>
+                        <a href="team.html" class="dropdown-link" onclick="showPage('meet-team')">Meet Our Team</a>
+                        <a href="coming_soon.html" class="dropdown-link" onclick="showPage('school-profile')">School Profile</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="programs.html" class="nav-link">Study at Rays</a>
+                    <div class="dropdown">
+                        <a href="programs.html" class="dropdown-link" onclick="showPage('programs')">Our Programs</a>
+                        <a href="admission.html" class="dropdown-link" onclick="showPage('admission')">Admission</a>
+                        <a href="coming_soon.html" class="dropdown-link" onclick="showPage('scholarships')">Scholarships</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link" onclick="showPage('gallery')">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">News & Events</a>
+                    <div class="dropdown">
+                        <a href="news.html" class="dropdown-link" onclick="showPage('news')">News & Events</a>
+                        <a href="coming_soon.html" class="dropdown-link" onclick="showPage('termly-news')">Termly News</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link" onclick="showPage('contact')">Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="search-button" onclick="toggleSearch()">
+                    <svg class="search-icon" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+                <button class="donate-btn">Donate</button>
+                <div class="nav-actions">
+                    <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="icon-menu">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="icon-close">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="mobile-logo" onclick="showPage('home')">
+                <img src="../images/logo-img/mobile-logo.png" alt="Rays School Logo" class="mobile-logo">
+            </a>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link" onclick="showPage('home'); closeMobileMenu();">Home</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown('about-dropdown', this.querySelector('.plus-minus-icon'))">
+                    About<span class="plus-minus-icon">+</span>
+                </a>
+                <div class="mobile-dropdown" id="about-dropdown">
+                    <a href="about.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('about-school'); closeMobileMenu();">About Our School</a>
+                    <a href="team.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('meet-team'); closeMobileMenu();">Meet Our Team</a>
+                    <a href="coming_soon.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('school-profile'); closeMobileMenu();">School Profile</a>
+                </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown('study-dropdown', this.querySelector('.plus-minus-icon'))">
+                    Study at Rays<span class="plus-minus-icon">+</span>
+                </a>
+                <div class="mobile-dropdown" id="study-dropdown">
+                    <a href="programs.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('programs'); closeMobileMenu();">Our Programs</a>
+                    <a href="admission.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('admission'); closeMobileMenu();">Admission</a>
+                    <a href="coming_soon.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('scholarships'); closeMobileMenu();">Scholarships</a>
+                </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="gallery.html" class="mobile-nav-link" onclick="showPage('gallery'); closeMobileMenu();">Gallery</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown('news-dropdown', this.querySelector('.plus-minus-icon'))">
+                    News<span class="plus-minus-icon">+</span>
+                </a>
+                <div class="mobile-dropdown" id="news-dropdown">
+                    <a href="news.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('news'); closeMobileMenu();">News & Events</a>
+                    <a href="coming_soon.html" class="mobile-nav-link mobile-dropdown-link" onclick="showPage('termly-news'); closeMobileMenu();">Termly News</a>
+                </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="contact.html" class="mobile-nav-link" onclick="showPage('contact'); closeMobileMenu();">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeMobileMenu()"></div>
+
+    <main>
+        <section id="about-section">
+            <div class="about-overlay">
+                <h2>
+                    ABOUT
+                    <br>
+                    RAYS OF GRACE
+                    <br> 
+                    JUNIOR SCHOOL
+                </h2>
+            </div>
+        </section>
+
+        <!-- About Us Content -->
+        <section id="about-content">
+            <div class="about-row">
+                <div class="about-col history">
+                    <h2>OUR HISTORY</h2>
+                    <p>
+                        Rays of Grace Junior School is a vibrant and nurturing educational institution proudly 
+                        registered under the Ministry of Education and Sports. Our journey began in the year 2015,
+                        initially operating as Mountain of Olives Primary School. Through dedication and growth,
+                        we transitioned to our current name, Rays of Grace Junior School in the year 2018,
+                    </p>
+                    <img src="../images/vmc/values.jpg" alt="School History Image" class="history-img">
+                    <p>    
+                        establishing ourselves from the outset as a comprehensive learning environment for both boys
+                        and girls, offering both day and boarding facilities.
+                        From our humble beginnings in Kirugu village, Wakisi Division, Njeru Municipality, Rays
+                        of Grace Junior School was founded with a vision to provide excellent education to all
+                        kinds of children and prepare servant leaders for the next generation.
+                    </p>
+                </div>
+                <div class="about-col motto">
+                    <h2>OUR MOTTO</h2>
+                    <p>"Knowledge Changing Lives Forever"</p>
+                    <div class="about-col anthem">
+                        <h2>SCHOOL ANTHEM</h2>
+                        <p>Knowledge Changing Lives Forever</p>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <section id="mission-vision-values">
+            <div class="card-container">
+                <div class="about-card">
+                <img src="../images/vmc/vision.jpg" alt="Vision" loading="lazy">
+                <h3>VISION</h3>
+                <p>
+                    To be a center of excellence where every child discovers their potential 
+                    and contributes positively to society.
+                </p>
+                </div>
+                <div class="about-card">
+                <img src="../images/vmc/mission.jpg" alt="Mission" loading="lazy">
+                <h3>MISSION</h3>
+                <p>
+                    To provide holistic education that empowers learners academically, socially, 
+                    and spiritually, preparing them for future challenges.
+                </p>
+                </div>
+                <div class="about-card">
+                <img src="../images/vmc/values.jpg" alt="Core Values" loading="lazy">
+                <h3>CORE VALUES</h3>
+                <ul>
+                    <li><b>C</b>ourage</li>
+                    <li><b>H</b>onesty</li>
+                    <li><b>E</b>mpowerment</li>
+                    <li><b>R</b>espect</li>
+                    <li><b>I</b>ntegrity</li>
+                    <li><b>S</b>piritual Growth</li>
+                    <li><b>H</b>ope</li>
+                </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/slider.js"></script>
+
+    <a href="#" id="back-to-top" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M342.6 81.4C330.1 68.9 309.8 68.9 297.3 81.4L137.3 241.4C124.8 253.9 124.8 274.2 137.3 286.7C149.8 299.2 170.1 299.2 182.6 286.7L288 181.3L288 552C288 569.7 302.3 584 320 584C337.7 584 352 569.7 352 552L352 181.3L457.4 286.7C469.9 299.2 490.2 299.2 502.7 286.7C515.2 274.2 515.2 253.9 502.7 241.4L342.7 81.4z"/></svg>
+    </a>
+</body>
+</html>
