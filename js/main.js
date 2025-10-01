@@ -153,82 +153,82 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error('Failed to load footer:', err));
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
 
-let isSearchOpen = false;
-
-function toggleSearch() {
-    if (isSearchOpen) {
-        closeSearch();
-    } else {
-        openSearch();
+    if (!form) {
+        console.error('Form not found!');
+        return;
     }
-}
 
-function openSearch() {
-    const overlay = document.getElementById('searchOverlay');
-    const backdrop = document.getElementById('backdrop');
-    const searchInput = document.getElementById('searchInput');
-    
-    overlay.classList.add('active');
-    backdrop.classList.add('active');
-    isSearchOpen = true;
-    
-    // Focus on input with slight delay for smooth animation
-    setTimeout(() => {
-        searchInput.focus();
-    }, 200);
-}
+    console.log('Form found, adding event listener...');
 
-function closeSearch() {
-    const overlay = document.getElementById('searchOverlay');
-    const backdrop = document.getElementById('backdrop');
-    
-    overlay.classList.remove('active');
-    backdrop.classList.remove('active');
-    isSearchOpen = false;
-    
-    // Clear input when closing
-    document.getElementById('searchInput').value = '';
-}
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        console.log('Form submitted, preventDefault called');
 
-function performSearch() {
-    const searchValue = document.getElementById('searchInput').value.trim();
-    if (searchValue) {
-        // Replace this alert with your actual search functionality
-        alert(`Searching for: "${searchValue}"`);
-        closeSearch();
-    }
-}
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessageDiv = document.getElementById('success-message');
 
-function fillSearch(term) {
-    document.getElementById('searchInput').value = term;
-    document.getElementById('searchInput').focus();
-}
+        successMessageDiv.style.display = 'none';
 
-// Close search with Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && isSearchOpen) {
-        closeSearch();
-    }
-    if (e.key === 'Enter' && isSearchOpen) {
-        performSearch();
-    }
-});
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-// Keyboard navigation within overlay
-document.addEventListener('keydown', function(e) {
-    if (isSearchOpen && e.key === 'Tab') {
-        const searchInput = document.getElementById('searchInput');
-        const closeButton = document.querySelector('.close-button');
-        const submitButton = document.querySelector('.search-submit');
-        
-        if (!e.shiftKey && document.activeElement === submitButton) {
-            e.preventDefault();
-            closeButton.focus();
-        } else if (e.shiftKey && document.activeElement === searchInput) {
-            e.preventDefault();
-            submitButton.focus();
+        const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+        };
+
+        console.log('Sending data:', formData);
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/submit-form", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            console.log('Response status:', response.status);
+            const data = await response.json();
+            console.log('Response data:', data);
+
+            if (response.ok && data.status === 'success') {
+                successMessageDiv.textContent = data.message;
+                successMessageDiv.style.display = 'block';
+                successMessageDiv.style.color = 'green';
+                successMessageDiv.style.backgroundColor = '#d4edda';
+                successMessageDiv.style.border = '1px solid #c3e6cb';
+                successMessageDiv.style.padding = '10px';
+                successMessageDiv.style.borderRadius = '5px';
+
+                form.reset();
+            } else {
+                successMessageDiv.textContent = data.detail || 'An error occurred. Please try again.';
+                successMessageDiv.style.display = 'block';
+                successMessageDiv.style.color = '#721c24';
+                successMessageDiv.style.backgroundColor = '#f8d7da';
+                successMessageDiv.style.border = '1px solid #f5c6cb';
+                successMessageDiv.style.padding = '10px';
+                successMessageDiv.style.borderRadius = '5px';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            successMessageDiv.textContent = 'Failed to submit. Please check your connection.';
+            successMessageDiv.style.display = 'block';
+            successMessageDiv.style.color = '#721c24';
+            successMessageDiv.style.backgroundColor = '#f8d7da';
+            successMessageDiv.style.border = '1px solid #f5c6cb';
+            successMessageDiv.style.padding = '10px';
+            successMessageDiv.style.borderRadius = '5px';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit';
         }
-    }
+    });
 });
 
