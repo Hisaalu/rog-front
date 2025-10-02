@@ -232,3 +232,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const searchToggle = document.getElementById("searchToggle");
+  const searchBox = document.getElementById("searchBox");
+
+  // Show search box and hide button
+  searchToggle.addEventListener("click", function (event) {
+    event.stopPropagation();
+    searchToggle.style.display = "none";     // hide button
+    searchBox.classList.add("active");       // show form
+    searchBox.querySelector("input").focus();
+  });
+
+  // Close search box when clicking outside
+  document.addEventListener("click", function (event) {
+    if (
+      searchBox.classList.contains("active") &&
+      !searchBox.contains(event.target)
+    ) {
+      searchBox.classList.remove("active");  // hide form
+      setTimeout(() => {
+        searchBox.style.display = "none";    // ensure it's hidden
+        searchToggle.style.display = "inline-flex"; // bring back button
+      }, 300); // wait for animation
+    }
+  });
+});

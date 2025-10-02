@@ -227,14 +227,11 @@ header {
 }
 
 
-/* Search Button Styles */
 .search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
+  display: inline-block; /* keeps button where it belongs */
 }
 
-
+/* Search Button */
 .search-button {
   background: none;
   border: none;
@@ -242,7 +239,7 @@ header {
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,6 +250,54 @@ header {
   height: 20px;
   fill: white;
 }
+
+/* Input box styling */
+form.search input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid var(--primary-orange);
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.search button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: var(--primary-orange);
+  color: white;
+  font-size: 17px;
+  border: 1px solid var(--primary-orange);
+  border-left: none;
+  cursor: pointer;
+}
+
+/* form.search button:hover {
+  background: var(--primary-orange);
+} */
+
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Hidden by default */
+#searchBox {
+  display: none;          /* start hidden */
+  opacity: 0;
+  transform: scale(0.95); /* subtle zoom effect */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Active (visible) state */
+#searchBox.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
 
 @media (max-width: 768px) {
     .search-overlay {
