@@ -42,8 +42,8 @@ body {
 #about-section {
     position: relative;
     width: 100%;
-    min-height: 60vh;
-    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    min-height: 80vh;
+    background: url("../images/about-img/about.jpg") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -40,13 +40,13 @@ body {
 #gallery-section {
     position: relative;
     width: 100%;
-    min-height: 60vh;
-    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    min-height: 80vh;
+    background: url("../images/gallery/gallery.jpg") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    background-position: center bottom;
+    background-position: center top;
     overflow: hidden;
 }
 
@@ -143,5 +143,14 @@ body {
     .gallery-description {
         font-size: 0.85rem;
         padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #agallery-section {
+        min-height: 40vh;
+        background-position: center top;
+        background-size: cover; 
+        padding: 0 15px;
     }
 }
