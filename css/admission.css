@@ -36,13 +36,13 @@ body {
 #admission-section {
     position: relative;
     width: 100%;
-    min-height: 60vh;
-    background: url("../images/footer-img/footer-bg.jpg") no-repeat center center/cover;
+    min-height: 80vh;
+    background: url("../images/admission-img/admission.jpg") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    background-position: center bottom;
+    background-position: center top;
     overflow: hidden;
 }
 
@@ -207,5 +207,14 @@ button[type="submit"]:hover {
     button[type="submit"] {
         padding: 10px;
         font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #admission-section {
+        min-height: 45vh;
+        background-position: center top;
+        background-size: cover; 
+        padding: 0 15px;
     }
 }
