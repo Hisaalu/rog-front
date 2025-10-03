@@ -2,5 +2,8 @@
   "rewrites": [
     { "source": "/", "destination": "/templates/index.html" },
     { "source": "/:page", "destination": "/templates/:page.html" }
+  ],
+  "redirects": [
+    { "source": "/:page.html", "destination": "/:page", "permanent": true }
   ]
 }
