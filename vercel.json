@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/templates/index.html" },
+    { "source": "/about", "destination": "/templates/about.html" },
+    { "source": "/admission", "destination": "/templates/admission.html" },
+    { "source": "/coming_soon", "destination": "/templates/coming_soon.html" },
+    { "source": "/contact", "destination": "/templates/contact.html" },
+    { "source": "/footer", "destination": "/templates/footer.html" },
+    { "source": "/gallery", "destination": "/templates/gallery.html" },
+    { "source": "/news", "destination": "/templates/news.html" },
+    { "source": "/programs", "destination": "/templates/programs.html" },
+    { "source": "/scholarship", "destination": "/templates/scholarship.html" },
+    { "source": "/team", "destination": "/templates/team.html" },
+    { "source": "/school_profile", "destination": "/templates/school_profile.html" },
+    { "source": "/termly_news", "destination": "/templates/termly_news.html" }
+
+  ]
+}
