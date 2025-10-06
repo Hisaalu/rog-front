@@ -14,7 +14,7 @@
     <header>
         <nav class="nav-container">
             <a href="index.html" class="logo" onclick="showPage('home')">
-                <img src="../images/logo-img/logo.png" alt="Rays School Logo" class="logo-img"
+                <img src="../images/logo-img/logo.png" alt="Rays School Logo" class="logo-img">
             </a>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -52,11 +52,28 @@
             </ul>
 
             <div class="nav-actions">
-                <button class="search-button" onclick="toggleSearch()">
-                    <svg class="search-icon" viewBox="0 0 24 24">
-                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                <!-- Search Button -->
+                <button class="search-button" id="searchToggle">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 
+                    12.59 16 11.11 16 9.5 16 5.91 
+                    13.09 3 9.5 3S3 5.91 3 9.5 
+                    5.91 16 9.5 16c1.61 0 3.09-.59 
+                    4.23-1.57l.27.28v.79l5 4.99L20.49 
+                    19l-4.99-5zm-6 0C7.01 14 5 
+                    11.99 5 9.5S7.01 5 9.5 5 
+                    14 7.01 14 9.5 11.99 14 
+                    9.5 14z"/>
                     </svg>
                 </button>
+
+                <!-- Hidden Centered Search Form -->
+                <div id="searchBox">
+                    <form class="search" action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search2">
+                    <button type="submit">Go</button>
+                    </form>
+                </div>
                 <button class="donate-btn">Donate</button>
                 <div class="nav-actions">
                     <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()">
@@ -133,35 +150,45 @@
                 <div class="gallery-grid">
                 <div class="gallery-item">
                 <img src="../images/gallery/gallery1.jpg" alt="Revision session" loading="lazy">
-                <p class="gallery-description">Students collaborating on a revision session for their upcoming exams.</p>
+                <p class="gallery-description">Students interacting with some of the 
+                    plant spiceies during the 2025 Agricultural Show in Jinja.
+                </p>
             </div>
             <div class="gallery-item">
                 <img src="../images/gallery/gallery2.jpg" alt="Classroom activity" loading="lazy">
-                <p class="gallery-description">Learners actively participating in a classroom activity to build teamwork.</p>
+                <p class="gallery-description">Proposed Rays of Grace Academy Sports Complex.</p>
             </div>
                 <div class="gallery-item">
                     <img src="../images/gallery/gallery3.jpg" alt="Library study" loading="lazy">
-                    <p class="gallery-description">A group of students studying quietly in the school library.</p>
+                    <p class="gallery-description">Our esteemed volunteer coaches from the Netherlands 
+                        together with our headteacher Sang'ayi Gerald.
+                    </p>
                 </div>
                 <div class="gallery-item">
                     <img src="../images/gallery/gallery4.jpg" alt="Sports event" loading="lazy">
-                    <p class="gallery-description">Pupils engaging in a friendly sports competition on the school grounds.</p>
+                    <p class="gallery-description">Pupils engaging with one of the facilitators at 
+                        the 2025 Jinja Agiricultural Show.
+                    </p>
                 </div>
                 <div class="gallery-item">
                     <img src="../images/gallery/gallery5.jpg" alt="Science lab" loading="lazy">
-                    <p class="gallery-description">Students performing a practical experiment in the science laboratory.</p>
+                    <p class="gallery-description">A Speech from Jacinta a Primary One kid during the 
+                        10 Years Anniversary Celebration.
+                    </p>
                 </div>
                 <div class="gallery-item">
                     <img src="../images/gallery/gallery6.jpg" alt="Cultural event" loading="lazy">
-                    <p class="gallery-description">Children showcasing their talents during a cultural celebration event.</p>
+                    <p class="gallery-description">....</p>
                 </div>
                 <div class="gallery-item">
                     <img src="../images/gallery/gallery7.jpg" alt="Computer lab" loading="lazy">
-                    <p class="gallery-description">Students learning ICT skills in a fully equipped computer lab.</p>
+                    <p class="gallery-description">Lower Primary Learners during one of the swimming lessons.</p>
                 </div>
                 <div class="gallery-item">
                     <img src="../images/gallery/gallery8.jpg" alt="School assembly" loading="lazy">
-                    <p class="gallery-description">A morning assembly where students gather for daily announcements and prayer.</p>
+                    <p class="gallery-description">Commisioning of the Music School by Hon. Annet Anita Among, the Speaker of 
+                        the 11th Parliament of Uganda.
+                    </p>
                 </div>
             </div>
         </div>

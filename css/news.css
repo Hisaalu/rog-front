@@ -101,12 +101,12 @@ body {
 }
 
 .header h2 {
-    font-size: 2.2em;
+    font-size: 2.8rem;
     color: var(--primary-purple);
     margin: 0;
     position: relative;
     padding-bottom: 5px;
-    font-family: 'Arial', sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 .header h2::after {
@@ -129,13 +129,14 @@ body {
 
 .news-card {
     background-color: #fff;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1 1 300px;
     min-width: 250px;
     max-width: calc(33.333% - 20px);
     opacity: 0;
+    height: 400px;
     transform: translateX(100px);
     animation-name: slideInFromRight;
     animation-duration: 0.8s;
@@ -204,14 +205,14 @@ body {
     }
 
     .news-card {
-        max-width: calc(50% - 20px); /* 2 per row on medium screens */
+        max-width: calc(50% - 20px); 
     }
 }
 
 @media (max-width: 992px) {
     .news-overlay h2 {
         font-size: 48px;
-        white-space: normal; /* allow wrapping */
+        white-space: normal;
     }
 
     .news-card {

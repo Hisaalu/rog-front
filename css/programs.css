@@ -97,7 +97,7 @@ body {
     color: black;
     margin-bottom: 10px;
     letter-spacing: 1px;
-    font-family: var(--secondary-font);
+    font-family: 'Roboto', sans-serif;
 }
 
 .cta-section p {

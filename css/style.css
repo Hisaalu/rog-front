@@ -21,7 +21,7 @@
 
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--dark-gray);
 }
@@ -555,6 +555,8 @@ form.search::after {
 
     .motto {
         font-size: 1rem;
+        font-family: monotype corsiva;
+        font-style: italic;
     }
 }
 
@@ -596,7 +598,7 @@ form.search::after {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: var(--white);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     align-content: start;
     line-height: 1.2;
 }
@@ -606,6 +608,7 @@ form.search::after {
     font-size: 1.1rem;
     margin-bottom: 20px;
     line-height: 1.2;
+    font-family: 'Roboto', sans-serif;
 }
 
 .slide-content .cta-button {
@@ -704,13 +707,16 @@ form.search::after {
 .vmc-text {
     padding: 25px;
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .vmc-text h2 {
     font-size: 2rem;
     color: var(--primary-purple);
     margin-bottom: 10px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .vmc-text p {
@@ -774,6 +780,9 @@ form.search::after {
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .program-section-title::after {
@@ -794,7 +803,7 @@ form.search::after {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.8;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .features-grid {
@@ -1066,7 +1075,7 @@ form.search::after {
 }
 
 /* Card styling */
-.news-card {
+.news-card-home {
   filter: none;
   flex: 0 0 280px;
   background: #ffffff;
@@ -1083,16 +1092,16 @@ form.search::after {
 }
 
 
-.news-card h3 {
+.news-card-home h3 {
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
   margin: 0 0 8px 0;
   font-weight: 700;
   color: rgb(0, 0, 0);
 }
 
 
-.news-card p {
+.news-card-home p {
   margin: 0 0 15px 0;
   text-align: center;
   color: #000000;
@@ -1161,7 +1170,7 @@ form.search::after {
   }
 
   .news-slider {
-    margin-top: -80px; 
+    margin-top: -60px; 
   }
 
   .news-section-title {
@@ -1267,6 +1276,11 @@ footer .footer-bottom {
     font-size: x-large;
 }
 
+.footer-section.contact-info p{
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+}
+
 .school-name {
     font-family: 'Roboto', sans-serif;
 }
@@ -1362,6 +1376,7 @@ footer .footer-bottom {
 .newsletter-form {
     display: flex;
     margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .newsletter-form input {

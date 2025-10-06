@@ -30,7 +30,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--dark-gray);
 }
@@ -103,9 +103,9 @@ body {
 }
 
 .about-col h2 {
-    font-size: 50px;
+    font-size: 2rem;
     margin-bottom: 15px;
-    font-family: var(--primary-font);
+    font-family: "Oswald", sans-serif;
     color: var(--primary-purple);
     font-style: normal;
 }
@@ -121,10 +121,15 @@ body {
     margin-bottom: 15px;
     color: black;
     line-height: 1.6;
-    font-family: var(--secondary-font);
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-style: normal;
     margin-top: -10px;
+}
+
+.stanza h3 {
+    font-size: 1.5rem;
+    color: var(--primary-orange);
 }
 
 .history-img {
@@ -174,15 +179,15 @@ body {
 }
 
 .about-card h3 {
-    font-family: var(--primary-font);
+    font-family: "Oswald", sans-serif;
     font-weight: 700;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: 2rem;
     color: var(--primary-purple);
     margin: 15px 0 10px;
 }
 
 .about-card p {
-    font-family: var(--secondary-font);
+    font-family: 'Roboto', sans-serif;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: black;
     padding: 0 15px 20px;
@@ -191,7 +196,7 @@ body {
 
 .about-card ul {
     text-align: justify;
-    font-family: var(--secondary-font);
+    font-family: 'Roboto', sans-serif;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: black;
     list-style: disc;

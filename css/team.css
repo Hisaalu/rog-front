@@ -90,11 +90,11 @@ body {
 }
 
 .team-title h2 {
-    font-size: clamp(24px, 3vw, 48px);
+    font-size: 2.8rem;
     margin-bottom: 20px;
     color: var(--primary-purple);
     margin-top: 15px;
-    font-family: var(--primary-font);
+    font-family: "Oswald", sans-serif;
     border-bottom: 3px solid var(--primary-orange);
     display: inline-block;
     padding-bottom: 5px;
