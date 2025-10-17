@@ -110,6 +110,10 @@ body {
   text-align: justify;
 }
 
+.about-col.history p {
+  color: black;
+}
+
 .about-col.history h2 {
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
@@ -163,12 +167,14 @@ body {
 
 .column.stanza p {
   font-family: 'Roboto', sans-serif;
+  color: black;
 }
 
 .column.stanza h4 {
   font-family: 'monotype corsiva';
   font-weight: normal;
   font-size: 20px;
+  color: black;
 }
 /* ------------------------------------ */
 /* --- 4. Mission, Vision, Values --- */
