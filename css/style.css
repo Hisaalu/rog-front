@@ -211,10 +211,10 @@ header {
 
 
 /* turning navigation links to orange on clicking for desktop view*/
-.nav-link.active {
-    color: orange;
+.nav-link.active,
+.dropdown-link.active {
+  color: orange;
 }
-
 
 
 .donate-btn {
@@ -1019,11 +1019,12 @@ form.search::after {
 }
 
 .news-section-title {
-  font-size: 2rem;
+  font-size: 2.8rem;
   margin-top: -30px;
   margin-left: 80px;
   color: var(--primary-purple);
   font-weight: 700;
+  font-family: "Oswald", sans-serif !important;
 }
 
 .decor-curve {
@@ -1176,8 +1177,9 @@ form.search::after {
   .news-section-title {
     margin-left: 10px;
     margin-bottom: -80px;       
-    font-size: 16px;
+    font-size: 22px;
     margin-top: -50px;
+    font-family: "Oswald", sans-serif !important;
   }
 
     .view-all-btn {

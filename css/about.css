@@ -82,68 +82,94 @@ body {
 /* ------------------------------------ */
 /* --- 3. About Page Content --- */
 /* ------------------------------------ */
-
 #about-content {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-    font-family: var(--secondary-font);
+  padding: 40px;
+  background-color: #f9f9f9;
 }
 
 .about-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+/* Base column styling */
 .about-col {
-    flex: 1;
-    min-width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex: 1; /* default flex growth */
+  min-width: 250px;
 }
 
-.about-col h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    font-family: "Oswald", sans-serif;
-    color: var(--primary-purple);
-    font-style: normal;
+/* Make the history column take up more space */
+.about-col.history {
+  flex: 1.8; /* larger width ratio */
+  background: #faf3e0;
+  text-align: justify;
 }
 
-.motto p {
-    font-size: 30px;
-    color: black;
-    margin-top: -10px;
+.about-col.history h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  color: var(--primary-purple);
 }
 
-.history p,
-.anthem p {
-    margin-bottom: 15px;
-    color: black;
-    line-height: 1.6;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    margin-top: -10px;
+/* Make the image responsive and centered in the history column */
+.about-col.history img {
+  display: block;
+  width: 100%;
+  height: 380px; /* keep proportions */
+  margin: 20px auto;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
+/* Anthem column standard size */
+.about-col.anthem {
+  flex: 1.3;
+  background: #e3f2fd;
+  font-family: "Oswald", sans-serif;
+}
+
+.about-col.anthem h2{
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  color: var(--primary-purple);
+}
+
+/* Anthem rows aligned side-by-side */
+.anthem-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Each stanza takes equal space */
+.column.stanza {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Heading style */
 .stanza h3 {
-    font-size: 1.5rem;
-    color: var(--primary-orange);
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: var(--primary-orange);
+  font-family: "Oswald", sans-serif;
 }
 
-.history-img {
-    width: 100%;
-    max-width: 1000px;
-    margin: 20px 0;
-    border-radius: 10px;
-    display: block;
+.column.stanza p {
+  font-family: 'Roboto', sans-serif;
 }
 
-.history p {
-    text-align: justify;
+.column.stanza h4 {
+  font-family: 'monotype corsiva';
+  font-weight: normal;
+  font-size: 20px;
 }
-
 /* ------------------------------------ */
 /* --- 4. Mission, Vision, Values --- */
 /* ------------------------------------ */
@@ -151,7 +177,6 @@ body {
 #mission-vision-values {
     padding: 50px 0;
     background: var(--light-gray);
-    margin-top: -60px;
 }
 
 .card-container {
@@ -159,7 +184,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-left: 180px;
 }
 
 .about-card {
@@ -227,12 +252,14 @@ body {
 /* --- 5. Responsive Design --- */
 /* ------------------------------------ */
 
+/* Tablet View */
 @media (max-width: 1024px) {
     #about-section {
         min-height: 60vh;
     }
 }
 
+/* Mobile View */
 @media (max-width: 768px) {
     #about-section {
         min-height: 50vh;
@@ -240,11 +267,31 @@ body {
 
     .about-overlay h2 {
         padding: 0 10px;
-        font-size: 1.8rem;
+        font-size: 2rem;
+        white-space: normal;
     }
 
-    .about-row,
-    .about-trio {
+    .about-row {
         flex-direction: column;
     }
+
+    /* ✅ Show only one card per row on mobile */
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 0 auto;
+    }
+
+    .about-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+  .about-col.history img {
+    max-height: 250px;  /* optional: keeps image from being too tall */
+    width: 100%;
+    object-fit: contain; /* ensures image stays natural */
+  }
 }
