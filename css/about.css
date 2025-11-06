@@ -281,23 +281,25 @@ body {
         flex-direction: column;
     }
 
-    /* ✅ Show only one card per row on mobile */
+    /* Show only one card per row on mobile and make full width */
     .card-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr; /* only one card per row */
+        margin: 0; /* remove left/right margin */
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     .about-card {
+        border-radius: 0; /* flush with screen edges */
         width: 100%;
-        margin: 0 auto;
     }
-}
 
-@media (max-width: 768px) {
-  .about-col.history img {
-    max-height: 250px;  /* optional: keeps image from being too tall */
-    width: 100%;
-    object-fit: contain; /* ensures image stays natural */
-  }
+    /* Keep image natural without stretching */
+    .about-col.history img {
+        max-height: 250px;  /* optional limit */
+        width: 100%;
+        object-fit: contain;
+    }
 }
