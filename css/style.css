@@ -1381,7 +1381,7 @@ footer .footer-bottom {
     font-family: 'Roboto', sans-serif;
 }
 
-.newsletter-form input {
+.newsletter-form input[type="email"] {
     flex: 1;
     padding: 10px;
     border: none;

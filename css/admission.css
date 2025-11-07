@@ -116,33 +116,33 @@ body {
 }
 
 /* Admission Form Styling */
-form {
+.admission-page form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-fieldset {
+.admission-page fieldset {
     border: 1px solid #ccc;
     border-radius: 6px;
     padding: 20px;
 }
 
-legend {
+.admission-page legend {
     font-weight: bold;
     color: var(--primary-purple);
     padding: 0 8px;
 }
 
-label {
+.admission-page label {
     margin-top: 10px;
     font-weight: 500;
     display: block;
 }
 
-input,
-select,
-textarea {
+.admission-page input,
+.admission-page select,
+.admission-page textarea {
     width: 100%;
     padding: 10px;
     margin-top: 6px;
@@ -152,12 +152,14 @@ textarea {
     background: #f9f9f9;
 }
 
-input[type="file"] {
+
+.admission-page input[type="file"] {
     padding: 5px;
     background: var(--white);
 }
 
-button[type="submit"] {
+.admission-page button[type="submit"] {
+    width: 100%;
     background: var(--primary-purple);
     color: var(--white);
     border: none;
@@ -167,9 +169,10 @@ button[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
-button[type="submit"]:hover {
+.admission-page button[type="submit"]:hover {
     background: var(--primary-purple);
 }
 
