@@ -20,7 +20,7 @@ function showSlides() {
 
     // If slideIndex goes beyond last slide, go to first slide
     if (slideIndex >= slides.length) {
-        slideIndex = 0; // Reset to 0 for 0-based indexing
+        slideIndex = 0;
     }
     // If slideIndex goes before first slide, go to last slide
     if (slideIndex < 0) {

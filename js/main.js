@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('footer.html') // Adjust path relative to HTML file
+    fetch('footer.html')
         .then(response => {
             if (!response.ok) throw new Error('Footer not found');
             return response.text();
@@ -239,8 +239,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Show search box and hide button
   searchToggle.addEventListener("click", function (event) {
     event.stopPropagation();
-    searchToggle.style.display = "none";     // hide button
-    searchBox.classList.add("active");       // show form
+    searchToggle.style.display = "none";
+    searchBox.classList.add("active"); 
     searchBox.querySelector("input").focus();
   });
 

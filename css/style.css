@@ -569,6 +569,7 @@ form.search::after {
     display: none; 
     position: relative;
     width: 100%;
+    animation: fade 1.5s ease-in-out;
 }
 
 .slide img {
@@ -576,6 +577,7 @@ form.search::after {
     height: auto;
     object-fit: cover;
     filter: brightness(70%);
+    animation: zoomIn 6s ease-in-out forwards;
 } 
 
 .slide-content {
@@ -635,9 +637,21 @@ form.search::after {
     animation-duration: 1.5s;
 }
 
+/* fade animation */
 @keyframes fade {
-    from {opacity: .4}
+    from {opacity: 0}
     to {opacity: 1}
+}
+
+/* Zoom animation */
+@keyframes zoomIn {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+/* Ensure fade does not override transform */
+.fade img {
+    animation-name: zoomIn !important;
 }
 
 /* Responsive adjustments for slider */
