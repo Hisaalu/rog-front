@@ -59,8 +59,6 @@ function startAutoSlide() {
 
 // Initialize slider on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Ensure the slider is part of the 'home' page or main content
-    // and initialize only when it's active or loaded.
     showSlides(); // Show the first slide immediately
     startAutoSlide(); // Start the automatic sliding
 });
